@@ -1,0 +1,47 @@
+Sub DeleteSheet()
+
+Sheets("Sheet2").Delete
+Application.DisplayAlert=False
+End Sub  
+
+
+'Handle Error If sheet not esixts
+
+Sub CheckSheetExists()
+
+On Error Resume Next
+
+Sheets("").Delete
+
+End Sub
+
+
+'---Delete Multiple Sheet 
+
+
+Sub DeleteMultipleSheet()
+
+Dim SheetNames() As Variant
+SheetNames= Array ("Sheet A","Sheet B")
+
+Sheets(SheetNames).Delete
+
+End Sub
+
+
+'--- Add Sheet  with specific Name
+
+
+Sub AddSheetWithName()
+Sheets.Add.Name = "Details" 
+
+End Sub 
+
+'----------------Add Specific sheet After Another sheet
+
+Sub AddSheetNameAfterAnother()
+
+Sheets.Add(After:=Sheets("Sheet2")).Name="Dummy"
+End Sub 
+
+
